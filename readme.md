@@ -45,6 +45,16 @@ node -v   # kiểm tra Node
 npm -v    # kiểm tra npm
 ```
 
+#### Bật yêu cầu pass
+```cmd
+nano /etc/ssh/sshd_config
+```
+- Dán:
+```cmd
+PasswordAuthentication yes
+PermitRootLogin yes
+```
+
 
 # ssh debian phone
 
@@ -113,4 +123,9 @@ chmod +x start-cloudflared.sh
 #### Chạy trên client
 ```cmd
 ssh -o 'ProxyCommand=cloudflared access ssh --hostname %h' root@ssh.dh74.io.vn
+```
+
+#### Đẩy folder lên server
+```sh
+tar -cf - -C <Nguồn> <Đích> | ssh -o "ProxyCommand=cloudflared access ssh --hostname %h" root@ssh.dh74.io.vn "tar -xf - -C ~/"
 ```
