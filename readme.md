@@ -55,18 +55,6 @@ npm install -g npm@11
 node -v   # kiểm tra Node
 npm -v    # kiểm tra npm
 ```
-
-#### Bật yêu cầu pass
-```cmd
-nano /etc/ssh/sshd_config
-```
-- Dán:
-```cmd
-PasswordAuthentication yes
-PermitRootLogin yes
-```
-
-
 # ssh debian phone
 
 #### setup ssh trên server:
@@ -84,6 +72,16 @@ sed -i 's/#Port 22/Port 8022/' /etc/ssh/sshd_config
 - Tạo host keys (nếu chưa có):
 ```cmd
 ssh-keygen -A
+```
+
+#### Bật yêu cầu pass
+```cmd
+nano /etc/ssh/sshd_config
+```
+- Dán:
+```cmd
+PasswordAuthentication yes
+PermitRootLogin yes
 ```
 
 ### Chạy SSH Server
