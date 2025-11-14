@@ -19,11 +19,22 @@ node -v
 npm -v
 ```
 
-3. Cài Cloudflared
+3. Cài Cloudflared   
 ```cmd
+mkdir -p /tmp
+chmod 1777 /tmp
 cd /tmp
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64.deb
 apt install ./cloudflared-linux-arm64.deb -y
+```
+
+##### Cài cloudflared qua script (không dùng file .deb)
+Cloudflare có installer tự động hỗ trợ mọi kiến trúc, kể cả armhf.
+
+Chạy:
+```cmd
+curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm -o /usr/local/bin/cloudflared
+chmod +x /usr/local/bin/cloudflared
 ```
 
 4. Cài nvm (Node Version Manager)
