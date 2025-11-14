@@ -131,6 +131,11 @@ exec cloudflared tunnel run --token eyJhIjoiYjYyOWQwZWVmMGY5YzkyZTNjYWUzNzg5OTJk
 chmod +x start-cloudflared.sh
 ```
 
+- Chạy lần đầu:
+```cmd
+ssh-keygen -R ssh.dh74.io.vn
+```
+
 #### Chạy trên client
 ```cmd
 ssh -o 'ProxyCommand=cloudflared access ssh --hostname %h' root@ssh.dh74.io.vn
